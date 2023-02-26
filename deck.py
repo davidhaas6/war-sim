@@ -32,13 +32,14 @@ class CardDeck:
     
 
     def addCards(self,cards: list) -> None:
-        self.discard_pile += cards;
+        self.discard_pile += cards
 
 
     def refreshDeck(self) -> None:
         """ Shuffles the discard pile and adds at the end of the deck """
         random.shuffle(self.discard_pile)
-        self.deck = self.deck + self.discard_pile
+        self.deck += self.discard_pile
+        self.discard_pile = []
 
     
     def complementDeck(self):
